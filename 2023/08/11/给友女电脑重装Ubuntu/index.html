@@ -4,10 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="我的第一篇博客, Hexo">
-    <meta name="description" content="我的第一篇博客第一章内容
-第二章内容
-第三章">
+    <meta name="keywords" content="给友女电脑重装Ubuntu, Hexo">
+    <meta name="description" content="给友女电脑重装Ubuntu女朋友电脑是她大学时候买的华硕，2016.12产，型号：A556U，CPU：i5-7200，ROM：4G，原装Windows10，如今卡的不行，于是给她重装了一个Ubuntu系统。
+一开始拿着我以前早就制作好的启动">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>我的第一篇博客 | Hexo</title>
+    <title>给友女电脑重装Ubuntu | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -336,12 +335,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">我的第一篇博客</h1>
+                    <h1 class="description center-align post-title">给友女电脑重装Ubuntu</h1>
                 </div>
             </div>
         </div>
@@ -363,9 +362,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Ubuntu/">
+                                <span class="chip bg-color">Ubuntu</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -377,7 +380,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2023-08-10
+                    2023-08-11
                 </div>
                 
 
@@ -398,9 +401,51 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="我的第一篇博客"><a href="#我的第一篇博客" class="headerlink" title="我的第一篇博客"></a>我的第一篇博客</h1><h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容</p>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
-<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2>
+                <h1 id="给友女电脑重装Ubuntu"><a href="#给友女电脑重装Ubuntu" class="headerlink" title="给友女电脑重装Ubuntu"></a>给友女电脑重装Ubuntu</h1><p>女朋友电脑是她大学时候买的华硕，2016.12产，型号：A556U，CPU：i5-7200，ROM：4G，原装Windows10，如今卡的不行，于是给她重装了一个Ubuntu系统。</p>
+<p>一开始拿着我以前早就制作好的启动盘，装的是Ubuntu18.04LTS，非常流畅，足够她打开B站跳辰亦儒了。此外我配置了root登录、ssh远程登陆、静态ip。</p>
+<p>这两天手痒了，想操作一波，手动在线升级了20.04，接着还不满足，又手动在线升级了22.04，搞了两天，现在总算恢复正常了，再次记录一下问题和解决方法。</p>
+<h3 id="1-磁盘分区不能乱动"><a href="#1-磁盘分区不能乱动" class="headerlink" title="1.磁盘分区不能乱动"></a>1.磁盘分区不能乱动</h3><p>由于不知道系统盘里面还必须有一个启动分区，在第一次安装好18.04之后，我想着干净一点，把“无关”分区删除掉，多出更多容量来，结果不小心把EFI分区给删掉了，导致重启之后进不了系统自动进的是recovery界面，于是只好选择了再次重装。</p>
+<h3 id="2-root密码设置"><a href="#2-root密码设置" class="headerlink" title="2.root密码设置"></a>2.root密码设置</h3><p>搜索帖子说root默认密码是随机的，于是先登陆安装时创建的用户，然后输入</p>
+<p><code>sudo passwd</code></p>
+<p>然后会提示输入当前用户密码，回车后，终端会提示我们输入新的密码并确认，此时的密码就是root新密码。 修改成功后，输入命令  <code>su root</code>  </p>
+<p>再输入刚才设置的新的密码就ok了。 </p>
+<p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/615835709">https://zhuanlan.zhihu.com/p/615835709</a></p>
+<h3 id="3-开启root用户登陆"><a href="#3-开启root用户登陆" class="headerlink" title="3.开启root用户登陆"></a>3.开启root用户登陆</h3><p>女朋友电脑刚安装，上网和搜索资料不方便，开启root远程登录</p>
+<ul>
+<li><p>在2的基础上登录普通用户</p>
+</li>
+<li><p>su root切换root登录</p>
+</li>
+<li><p>注释如下两个文件的对应行</p>
+</li>
+</ul>
+<p>&#x2F;etc&#x2F;pam.d&#x2F;gdm-password</p>
+<p>&#x2F;etc&#x2F;pam.d&#x2F;gdm-autologin</p>
+<p>#auth required pam_succeed_if.so user !&#x3D; root quiet_success</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/570235764">https://zhuanlan.zhihu.com/p/570235764</a></p>
+<h3 id="4-配置root用户的远程ssh连接"><a href="#4-配置root用户的远程ssh连接" class="headerlink" title="4.配置root用户的远程ssh连接"></a>4.配置root用户的远程ssh连接</h3><p>​	- 安装openssh</p>
+<p><code>sudo apt install openssh-server</code></p>
+<ul>
+<li>修改配置文件&#x2F;etc&#x2F;ssh&#x2F;sshd_config</li>
+</ul>
+<p><code>sudo vim /etc/ssh/sshd_config</code></p>
+<p>将</p>
+<p>#PermitRootLogin prohibit-password</p>
+<p>改成</p>
+<p><code>PermitRootLogin yes</code></p>
+<ul>
+<li>重启ssh服务</li>
+</ul>
+<p><code>sudo systemctl restart ssh</code></p>
+<p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/570235764">https://zhuanlan.zhihu.com/p/570235764</a></p>
+<h3 id="5-设置静态IP"><a href="#5-设置静态IP" class="headerlink" title="5.设置静态IP"></a>5.设置静态IP</h3><p>由于网上找了命令行设置静态IP的方法，觉得非常麻烦，所有没有采纳。我连的是手机的热点，于是在“设置－WIFI－已连接热点设置－IPv4”中手动设置了IP地址、子网掩码和默认网关。</p>
+<h3 id="6-解压缩文件名乱码"><a href="#6-解压缩文件名乱码" class="headerlink" title="6.解压缩文件名乱码"></a>6.解压缩文件名乱码</h3><p>经过Xftp从Windows传过来的.zip压缩包，直接用文件管理器右键”解压到此处“之后打开发现文件名全是乱码。我的解决：</p>
+<p><code>unzip -O GBK xxx.zip</code></p>
+<p>参考：<a target="_blank" rel="noopener" href="http://www.kkkyk.mmduo.com/news/itemid-137856.shtml">http://www.kkkyk.mmduo.com/news/itemid-137856.shtml</a></p>
+<h3 id="6-网络突然故障"><a href="#6-网络突然故障" class="headerlink" title="6.网络突然故障"></a>6.网络突然故障</h3><p>昨晚22.04刚安装好的时候打开firefox上百度还是可以的，今天早上再次打开却上不了网了，找了半天帖子都觉得不靠谱，于是查询了一下各IP，发现默认网关和开热点手机的IP不一致，也许是手机的IP在变，于是改成一致的，接着重启网络管理器</p>
+<p><code>systemctl restart NetworkManager</code></p>
+<p>哎，好了。</p>
+
                 
             </div>
             <hr/>
@@ -426,7 +471,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2023/08/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">http://example.com/2023/08/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</a>
+                    <a href="http://example.com/2023/08/11/%E7%BB%99%E5%8F%8B%E5%A5%B3%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85Ubuntu/">http://example.com/2023/08/11/%E7%BB%99%E5%8F%8B%E5%A5%B3%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85Ubuntu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -463,7 +508,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/Ubuntu/">
+                                    <span class="chip bg-color">Ubuntu</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -545,13 +594,13 @@
                 <i class="far fa-dot-circle"></i>&nbsp;Current
             </div>
             <div class="card">
-                <a href="/2023/08/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
+                <a href="/2023/08/11/%E7%BB%99%E5%8F%8B%E5%A5%B3%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85Ubuntu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="我的第一篇博客">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="给友女电脑重装Ubuntu">
                         
-                        <span class="card-title">我的第一篇博客</span>
+                        <span class="card-title">给友女电脑重装Ubuntu</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -562,7 +611,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-11
                             </span>
                         <span class="publish-author">
                             
@@ -573,6 +622,14 @@
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Ubuntu/">
+                        <span class="chip bg-color">Ubuntu</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
