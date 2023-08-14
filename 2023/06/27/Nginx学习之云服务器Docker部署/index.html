@@ -4,9 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="给友女电脑重装Ubuntu, 道阻且长，行则将至">
-    <meta name="description" content="给友女电脑重装Ubuntu女朋友电脑是她大学时候买的华硕，2016.12产，型号：A556U，CPU：i5-7200，ROM：4G，原装Windows10，如今卡的不行，于是给她重装了一个Ubuntu系统。
-一开始拿着我以前早就制作好的启动">
+    <meta name="keywords" content="Nginx学习之云服务器Docker部署, 道阻且长，行则将至">
+    <meta name="description" content="Nginx学习之云服务器Docker部署​		本文记录的是宿主机上Nginx卸载以及使用Docker部署Nginx的过程。
+一、卸载宿主机Nginx1. 停止Nginx软件/usr/local/nginx/sbin/nginx -s sto">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>给友女电脑重装Ubuntu | 道阻且长，行则将至</title>
+    <title>Nginx学习之云服务器Docker部署 | 道阻且长，行则将至</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -340,7 +340,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">给友女电脑重装Ubuntu</h1>
+                    <h1 class="description center-align post-title">Nginx学习之云服务器Docker部署</h1>
                 </div>
             </div>
         </div>
@@ -364,12 +364,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                                <span class="chip bg-color">操作系统</span>
+                            <a href="/tags/Nginx/">
+                                <span class="chip bg-color">Nginx</span>
                             </a>
                         
-                            <a href="/tags/Ubuntu/">
-                                <span class="chip bg-color">Ubuntu</span>
+                            <a href="/tags/Docker/">
+                                <span class="chip bg-color">Docker</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">
+                                <span class="chip bg-color">阿里云</span>
                             </a>
                         
                     </div>
@@ -393,7 +397,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-06-25
+                    2023-06-27
                 </div>
                 
 
@@ -414,50 +418,47 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="给友女电脑重装Ubuntu"><a href="#给友女电脑重装Ubuntu" class="headerlink" title="给友女电脑重装Ubuntu"></a>给友女电脑重装Ubuntu</h1><p>女朋友电脑是她大学时候买的华硕，2016.12产，型号：A556U，CPU：i5-7200，ROM：4G，原装Windows10，如今卡的不行，于是给她重装了一个Ubuntu系统。</p>
-<p>一开始拿着我以前早就制作好的启动盘，装的是Ubuntu18.04LTS，非常流畅，足够她打开B站跳辰亦儒了。此外我配置了root登录、ssh远程登陆、静态ip。</p>
-<p>这两天手痒了，想操作一波，手动在线升级了20.04，接着还不满足，又手动在线升级了22.04，搞了两天，现在总算恢复正常了，再次记录一下问题和解决方法。</p>
-<h3 id="1-磁盘分区不能乱动"><a href="#1-磁盘分区不能乱动" class="headerlink" title="1.磁盘分区不能乱动"></a>1.磁盘分区不能乱动</h3><p>由于不知道系统盘里面还必须有一个启动分区，在第一次安装好18.04之后，我想着干净一点，把“无关”分区删除掉，多出更多容量来，结果不小心把EFI分区给删掉了，导致重启之后进不了系统自动进的是recovery界面，于是只好选择了再次重装。</p>
-<h3 id="2-root密码设置"><a href="#2-root密码设置" class="headerlink" title="2.root密码设置"></a>2.root密码设置</h3><p>搜索帖子说root默认密码是随机的，于是先登陆安装时创建的用户，然后输入</p>
-<p><code>sudo passwd</code></p>
-<p>然后会提示输入当前用户密码，回车后，终端会提示我们输入新的密码并确认，此时的密码就是root新密码。 修改成功后，输入命令  <code>su root</code>  </p>
-<p>再输入刚才设置的新的密码就ok了。 </p>
-<p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/615835709">https://zhuanlan.zhihu.com/p/615835709</a></p>
-<h3 id="3-开启root用户登陆"><a href="#3-开启root用户登陆" class="headerlink" title="3.开启root用户登陆"></a>3.开启root用户登陆</h3><p>女朋友电脑刚安装，上网和搜索资料不方便，开启root远程登录</p>
+                <h1 id="Nginx学习之云服务器Docker部署"><a href="#Nginx学习之云服务器Docker部署" class="headerlink" title="Nginx学习之云服务器Docker部署"></a>Nginx学习之云服务器Docker部署</h1><p>​		本文记录的是宿主机上Nginx卸载以及使用Docker部署Nginx的过程。</p>
+<h1 id="一、卸载宿主机Nginx"><a href="#一、卸载宿主机Nginx" class="headerlink" title="一、卸载宿主机Nginx"></a>一、<strong>卸载宿主机Nginx</strong></h1><h3 id="1-停止Nginx软件"><a href="#1-停止Nginx软件" class="headerlink" title="1. 停止Nginx软件"></a>1. 停止Nginx软件</h3><p><code>/usr/local/nginx/sbin/nginx -s stop</code></p>
+<p>如果不知道nginx安装路径，可以通过执行ps命令找到nginx程序的PID，然后kill其PID</p>
+<p><code>ps aux | grep nginx</code></p>
+<h3 id="2-查找根下所有名字包含nginx的文件"><a href="#2-查找根下所有名字包含nginx的文件" class="headerlink" title="2. 查找根下所有名字包含nginx的文件"></a>2. 查找根下所有名字包含nginx的文件</h3><p><code>find / -name nginx*</code></p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/Mvy4yqMB"><img src="https://i.postimg.cc/rFbk2pqf/screenshot-15.png" alt="screenshot-15.png"></a></p>
+<h3 id="3-执行命令-rm-rf-删除nignx安装的相关文件"><a href="#3-执行命令-rm-rf-删除nignx安装的相关文件" class="headerlink" title="3. 执行命令 rm -rf *删除nignx安装的相关文件"></a>3. <strong>执行命令 rm -rf *删除nignx安装的相关文件</strong></h3><p><code>rm -rf /etc/nginx /usr/lib64/nginx /usr/local/nginx /usr/local/nginx/sbin/nginx /usr/share/nginx</code></p>
+<h3 id="4-其他设置"><a href="#4-其他设置" class="headerlink" title="4. 其他设置"></a>4. <strong>其他设置</strong></h3><p>如果设置了Nginx开机自启动的话，可能还需要下面两步</p>
+<p><code>chkconfig nginx off</code></p>
+<p><code>rm -rf /etc/init.d/nginx</code></p>
+<h1 id="二、Docker部署Nginx"><a href="#二、Docker部署Nginx" class="headerlink" title="二、Docker部署Nginx"></a>二、<strong>Docker部署Nginx</strong></h1><p>​		这里的前提是已经配置好云服务器并已经用SSH远程连接工具连接上，且已经安装好Docker。</p>
+<h3 id="1-查找和拉取Nginx镜像"><a href="#1-查找和拉取Nginx镜像" class="headerlink" title="1. 查找和拉取Nginx镜像"></a>1. <strong>查找和拉取Nginx镜像</strong></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker search nginx</span><br><span class="line">docker pull nginx</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-创建挂载配置文件、日志文件和html的目录"><a href="#2-创建挂载配置文件、日志文件和html的目录" class="headerlink" title="2. 创建挂载配置文件、日志文件和html的目录"></a>2. <strong>创建挂载配置文件、日志文件和html的目录</strong></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /data/nginx/conf</span><br><span class="line">mkdir -p /data/nginx/html</span><br><span class="line">mkdir -p /data/nginx/log</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-简单启动容器并复制文件"><a href="#3-简单启动容器并复制文件" class="headerlink" title="3. 简单启动容器并复制文件"></a>3. <strong>简单启动容器并复制文件</strong></h3><p>这里启动容器的目的是为了将容器中配置文件拷贝到宿主机中的挂载目录里，因为当宿主机和容器都不存在 nginx.conf 文件时, 执行启动命令时docker会将nginx.conf作为目录创建，而我们不需要创建目录而是配置文件，因此需要该步骤。</p>
 <ul>
-<li><p>在2的基础上登录普通用户</p>
-</li>
-<li><p>su root切换root登录</p>
-</li>
-<li><p>注释如下两个文件的对应行</p>
-</li>
+<li>启动容器</li>
 </ul>
-<p>&#x2F;etc&#x2F;pam.d&#x2F;gdm-password</p>
-<p>&#x2F;etc&#x2F;pam.d&#x2F;gdm-autologin</p>
-<p>#auth required pam_succeed_if.so user !&#x3D; root quiet_success</p>
-<p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/570235764">https://zhuanlan.zhihu.com/p/570235764</a></p>
-<h3 id="4-配置root用户的远程ssh连接"><a href="#4-配置root用户的远程ssh连接" class="headerlink" title="4.配置root用户的远程ssh连接"></a>4.配置root用户的远程ssh连接</h3><p>​	- 安装openssh</p>
-<p><code>sudo apt install openssh-server</code></p>
+<p><code>docker run --name nginx01 -p 80:80 -d nginx</code></p>
 <ul>
-<li>修改配置文件&#x2F;etc&#x2F;ssh&#x2F;sshd_config</li>
+<li>将容器中nginx.conf文件复制到宿主机的挂载目录中</li>
 </ul>
-<p><code>sudo vim /etc/ssh/sshd_config</code></p>
-<p>将</p>
-<p>#PermitRootLogin prohibit-password</p>
-<p>改成</p>
-<p><code>PermitRootLogin yes</code></p>
+<p><code>docker cp nginx01:/etc/nginx/nginx.conf /data/nginx/conf/nginx.conf</code></p>
 <ul>
-<li>重启ssh服务</li>
+<li>将容器中conf.d文件夹下内容复制到宿主机的挂载目录中</li>
 </ul>
-<p><code>sudo systemctl restart ssh</code></p>
-<p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/570235764">https://zhuanlan.zhihu.com/p/570235764</a></p>
-<h3 id="5-设置静态IP"><a href="#5-设置静态IP" class="headerlink" title="5.设置静态IP"></a>5.设置静态IP</h3><p>由于网上找了命令行设置静态IP的方法，觉得非常麻烦，所有没有采纳。我连的是手机的热点，于是在“设置－WIFI－已连接热点设置－IPv4”中手动设置了IP地址、子网掩码和默认网关。</p>
-<h3 id="6-解压缩文件名乱码"><a href="#6-解压缩文件名乱码" class="headerlink" title="6.解压缩文件名乱码"></a>6.解压缩文件名乱码</h3><p>经过Xftp从Windows传过来的.zip压缩包，直接用文件管理器右键”解压到此处“之后打开发现文件名全是乱码。我的解决：</p>
-<p><code>unzip -O GBK xxx.zip</code></p>
-<p>参考：<a target="_blank" rel="noopener" href="http://www.kkkyk.mmduo.com/news/itemid-137856.shtml">http://www.kkkyk.mmduo.com/news/itemid-137856.shtml</a></p>
-<h3 id="6-网络突然故障"><a href="#6-网络突然故障" class="headerlink" title="6.网络突然故障"></a>6.网络突然故障</h3><p>昨晚22.04刚安装好的时候打开firefox上百度还是可以的，今天早上再次打开却上不了网了，找了半天帖子都觉得不靠谱，于是查询了一下各IP，发现默认网关和开热点手机的IP不一致，也许是手机的IP在变，于是改成一致的，接着重启网络管理器</p>
-<p><code>systemctl restart NetworkManager</code></p>
-<p>哎，好了。</p>
+<p><code>docker cp nginx01:/etc/nginx/conf.d /data/nginx/conf/conf.d</code></p>
+<ul>
+<li>将容器中的html文件夹复制到宿主机的挂载目录中</li>
+</ul>
+<p><code>docker cp nginx01:/usr/share/nginx/html /data/nginx/html</code></p>
+<ul>
+<li>删除容器</li>
+</ul>
+<p><code>docker rm -f nginx01</code></p>
+<h3 id="4-通过挂载创建正式容器"><a href="#4-通过挂载创建正式容器" class="headerlink" title="4. 通过挂载创建正式容器"></a>4. <strong>通过挂载创建正式容器</strong></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 80:80 \</span><br><span class="line">-v /data/nginx/conf/nginx.conf:/etc/nginx/nginx.conf \</span><br><span class="line">-v /data/nginx/html:/usr/share/nginx/html \</span><br><span class="line">-v /data/nginx/log:/var/log/nginx \</span><br><span class="line">--name nginx nginx</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-验证"><a href="#5-验证" class="headerlink" title="5. 验证"></a>5. 验证</h3><p>在浏览器地址栏输入<a target="_blank" rel="noopener" href="http://47.96.43.200/">服务器IP:端口号</a></p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/QHWLfCSY"><img src="https://i.postimg.cc/ZKwTKyNm/screenshot-16.png" alt="screenshot-16.png"></a></p>
+<p>后期发布站点只需要修改&#x2F;data&#x2F;nginx&#x2F;conf中的配置文件，同时将需要发布的站点文件上传到&#x2F;data&#x2F;nginx&#x2F;html即可。</p>
 
                 
             </div>
@@ -484,7 +485,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://tanlico.github.io/2023/06/25/%E7%BB%99%E5%8F%8B%E5%A5%B3%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85Ubuntu/">https://tanlico.github.io/2023/06/25/%E7%BB%99%E5%8F%8B%E5%A5%B3%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85Ubuntu/</a>
+                    <a href="https://tanlico.github.io/2023/06/27/Nginx%E5%AD%A6%E4%B9%A0%E4%B9%8B%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8Docker%E9%83%A8%E7%BD%B2/">https://tanlico.github.io/2023/06/27/Nginx%E5%AD%A6%E4%B9%A0%E4%B9%8B%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8Docker%E9%83%A8%E7%BD%B2/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -522,12 +523,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                                    <span class="chip bg-color">操作系统</span>
+                                <a href="/tags/Nginx/">
+                                    <span class="chip bg-color">Nginx</span>
                                 </a>
                             
-                                <a href="/tags/Ubuntu/">
-                                    <span class="chip bg-color">Ubuntu</span>
+                                <a href="/tags/Docker/">
+                                    <span class="chip bg-color">Docker</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">
+                                    <span class="chip bg-color">阿里云</span>
                                 </a>
                             
                         </div>
@@ -610,13 +615,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/06/27/Nginx%E5%AD%A6%E4%B9%A0%E4%B9%8B%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8Docker%E9%83%A8%E7%BD%B2/">
+                <a href="/2023/08/10/Hexo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Nginx学习之云服务器Docker部署">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Hexo个人博客搭建">
                         
-                        <span class="card-title">Nginx学习之云服务器Docker部署</span>
+                        <span class="card-title">Hexo个人博客搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -627,7 +632,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-06-27
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-08-10
                         </span>
                         <span class="publish-author">
                             
@@ -644,16 +649,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Nginx/">
-                        <span class="chip bg-color">Nginx</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
-                    <a href="/tags/Docker/">
-                        <span class="chip bg-color">Docker</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">
-                        <span class="chip bg-color">阿里云</span>
+                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                        <span class="chip bg-color">博客</span>
                     </a>
                     
                 </div>
@@ -667,13 +668,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/06/01/Nginx%E9%AB%98%E5%8F%AF%E7%94%A8%E9%85%8D%E7%BD%AE%E2%80%94%E2%80%94Keepalived/">
+                <a href="/2023/06/25/%E7%BB%99%E5%8F%8B%E5%A5%B3%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85Ubuntu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Nginx高可用配置——Keepalived">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="给友女电脑重装Ubuntu">
                         
-                        <span class="card-title">Nginx高可用配置——Keepalived</span>
+                        <span class="card-title">给友女电脑重装Ubuntu</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -684,7 +685,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-25
                             </span>
                         <span class="publish-author">
                             
@@ -701,16 +702,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Nginx/">
-                        <span class="chip bg-color">Nginx</span>
+                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">操作系统</span>
                     </a>
                     
-                    <a href="/tags/Keepalived/">
-                        <span class="chip bg-color">Keepalived</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%AB%98%E5%8F%AF%E7%94%A8/">
-                        <span class="chip bg-color">高可用</span>
+                    <a href="/tags/Ubuntu/">
+                        <span class="chip bg-color">Ubuntu</span>
                     </a>
                     
                 </div>
