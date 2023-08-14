@@ -4,9 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="给友女电脑重装Ubuntu, 道阻且长，行则将至">
-    <meta name="description" content="给友女电脑重装Ubuntu女朋友电脑是她大学时候买的华硕，2016.12产，型号：A556U，CPU：i5-7200，ROM：4G，原装Windows10，如今卡的不行，于是给她重装了一个Ubuntu系统。
-一开始拿着我以前早就制作好的启动">
+    <meta name="keywords" content="Docker学习, 道阻且长，行则将至">
+    <meta name="description" content="Docker学习一、Docker安装及卸载1. 环境
+主机：阿里云服务器ECS
+配置：1 vCPU 2 GiB （I&amp;#x2F;O优化）1Mbps
+公网IP：47.96.43.200
+操作系统：CentOS 7.9 64位 SCC版
+
+2.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +23,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>给友女电脑重装Ubuntu | 道阻且长，行则将至</title>
+    <title>Docker学习 | 道阻且长，行则将至</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -335,12 +340,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">给友女电脑重装Ubuntu</h1>
+                    <h1 class="description center-align post-title">Docker学习</h1>
                 </div>
             </div>
         </div>
@@ -364,12 +369,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                                <span class="chip bg-color">操作系统</span>
+                            <a href="/tags/%E5%AE%B9%E5%99%A8/">
+                                <span class="chip bg-color">容器</span>
                             </a>
                         
-                            <a href="/tags/Ubuntu/">
-                                <span class="chip bg-color">Ubuntu</span>
+                            <a href="/tags/Docker/">
+                                <span class="chip bg-color">Docker</span>
                             </a>
                         
                     </div>
@@ -393,7 +398,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-06-25
+                    2023-06-18
                 </div>
                 
 
@@ -414,50 +419,293 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="给友女电脑重装Ubuntu"><a href="#给友女电脑重装Ubuntu" class="headerlink" title="给友女电脑重装Ubuntu"></a>给友女电脑重装Ubuntu</h1><p>女朋友电脑是她大学时候买的华硕，2016.12产，型号：A556U，CPU：i5-7200，ROM：4G，原装Windows10，如今卡的不行，于是给她重装了一个Ubuntu系统。</p>
-<p>一开始拿着我以前早就制作好的启动盘，装的是Ubuntu18.04LTS，非常流畅，足够她打开B站跳辰亦儒了。此外我配置了root登录、ssh远程登陆、静态ip。</p>
-<p>这两天手痒了，想操作一波，手动在线升级了20.04，接着还不满足，又手动在线升级了22.04，搞了两天，现在总算恢复正常了，再次记录一下问题和解决方法。</p>
-<h3 id="1-磁盘分区不能乱动"><a href="#1-磁盘分区不能乱动" class="headerlink" title="1.磁盘分区不能乱动"></a>1.磁盘分区不能乱动</h3><p>由于不知道系统盘里面还必须有一个启动分区，在第一次安装好18.04之后，我想着干净一点，把“无关”分区删除掉，多出更多容量来，结果不小心把EFI分区给删掉了，导致重启之后进不了系统自动进的是recovery界面，于是只好选择了再次重装。</p>
-<h3 id="2-root密码设置"><a href="#2-root密码设置" class="headerlink" title="2.root密码设置"></a>2.root密码设置</h3><p>搜索帖子说root默认密码是随机的，于是先登陆安装时创建的用户，然后输入</p>
-<p><code>sudo passwd</code></p>
-<p>然后会提示输入当前用户密码，回车后，终端会提示我们输入新的密码并确认，此时的密码就是root新密码。 修改成功后，输入命令  <code>su root</code>  </p>
-<p>再输入刚才设置的新的密码就ok了。 </p>
-<p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/615835709">https://zhuanlan.zhihu.com/p/615835709</a></p>
-<h3 id="3-开启root用户登陆"><a href="#3-开启root用户登陆" class="headerlink" title="3.开启root用户登陆"></a>3.开启root用户登陆</h3><p>女朋友电脑刚安装，上网和搜索资料不方便，开启root远程登录</p>
-<ul>
-<li><p>在2的基础上登录普通用户</p>
-</li>
-<li><p>su root切换root登录</p>
-</li>
-<li><p>注释如下两个文件的对应行</p>
-</li>
+                <h1 id="Docker学习"><a href="#Docker学习" class="headerlink" title="Docker学习"></a>Docker学习</h1><h1 id="一、Docker安装及卸载"><a href="#一、Docker安装及卸载" class="headerlink" title="一、Docker安装及卸载"></a><strong>一、Docker安装及卸载</strong></h1><h3 id="1-环境"><a href="#1-环境" class="headerlink" title="1. 环境"></a>1. 环境</h3><ul>
+<li>主机：阿里云服务器ECS</li>
+<li>配置：1 vCPU 2 GiB （I&#x2F;O优化）1Mbps</li>
+<li>公网IP：47.96.43.200</li>
+<li>操作系统：CentOS 7.9 64位 SCC版</li>
 </ul>
-<p>&#x2F;etc&#x2F;pam.d&#x2F;gdm-password</p>
-<p>&#x2F;etc&#x2F;pam.d&#x2F;gdm-autologin</p>
-<p>#auth required pam_succeed_if.so user !&#x3D; root quiet_success</p>
-<p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/570235764">https://zhuanlan.zhihu.com/p/570235764</a></p>
-<h3 id="4-配置root用户的远程ssh连接"><a href="#4-配置root用户的远程ssh连接" class="headerlink" title="4.配置root用户的远程ssh连接"></a>4.配置root用户的远程ssh连接</h3><p>​	- 安装openssh</p>
-<p><code>sudo apt install openssh-server</code></p>
-<ul>
-<li>修改配置文件&#x2F;etc&#x2F;ssh&#x2F;sshd_config</li>
+<h3 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h3><ul>
+<li>查看系统版本号，确定是centos7以上版本：</li>
 </ul>
-<p><code>sudo vim /etc/ssh/sshd_config</code></p>
-<p>将</p>
-<p>#PermitRootLogin prohibit-password</p>
-<p>改成</p>
-<p><code>PermitRootLogin yes</code></p>
+<p><code>cat /etc/redhat-release</code></p>
 <ul>
-<li>重启ssh服务</li>
+<li>yum安装gcc相关</li>
 </ul>
-<p><code>sudo systemctl restart ssh</code></p>
-<p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/570235764">https://zhuanlan.zhihu.com/p/570235764</a></p>
-<h3 id="5-设置静态IP"><a href="#5-设置静态IP" class="headerlink" title="5.设置静态IP"></a>5.设置静态IP</h3><p>由于网上找了命令行设置静态IP的方法，觉得非常麻烦，所有没有采纳。我连的是手机的热点，于是在“设置－WIFI－已连接热点设置－IPv4”中手动设置了IP地址、子网掩码和默认网关。</p>
-<h3 id="6-解压缩文件名乱码"><a href="#6-解压缩文件名乱码" class="headerlink" title="6.解压缩文件名乱码"></a>6.解压缩文件名乱码</h3><p>经过Xftp从Windows传过来的.zip压缩包，直接用文件管理器右键”解压到此处“之后打开发现文件名全是乱码。我的解决：</p>
-<p><code>unzip -O GBK xxx.zip</code></p>
-<p>参考：<a target="_blank" rel="noopener" href="http://www.kkkyk.mmduo.com/news/itemid-137856.shtml">http://www.kkkyk.mmduo.com/news/itemid-137856.shtml</a></p>
-<h3 id="6-网络突然故障"><a href="#6-网络突然故障" class="headerlink" title="6.网络突然故障"></a>6.网络突然故障</h3><p>昨晚22.04刚安装好的时候打开firefox上百度还是可以的，今天早上再次打开却上不了网了，找了半天帖子都觉得不靠谱，于是查询了一下各IP，发现默认网关和开热点手机的IP不一致，也许是手机的IP在变，于是改成一致的，接着重启网络管理器</p>
-<p><code>systemctl restart NetworkManager</code></p>
-<p>哎，好了。</p>
+<p><code>yum -y install gcc gcc-c++</code></p>
+<ul>
+<li>安装需要的软件包</li>
+</ul>
+<p><code>yum install -y yum-utils device-mapper-persistent-data lvm2</code></p>
+<ul>
+<li>设置stable镜像仓库</li>
+</ul>
+<p><code>yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</code></p>
+<ul>
+<li>更新yum软件包索引</li>
+</ul>
+<p><code>yum makecache fast</code></p>
+<ul>
+<li>安装DOCKER CE</li>
+</ul>
+<p><code>yum -y install docker-ce</code></p>
+<h3 id="3-测试"><a href="#3-测试" class="headerlink" title="3. 测试"></a>3. <strong>测试</strong></h3><p><code>docker version </code></p>
+<p><code>docker run hello-world</code></p>
+<h3 id="4-配置镜像加速"><a href="#4-配置镜像加速" class="headerlink" title="4. 配置镜像加速"></a>4. 配置镜像加速</h3><p>可参考：<a target="_blank" rel="noopener" href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors">https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors</a></p>
+<p>通过修改daemon配置文件&#x2F;etc&#x2F;docker&#x2F;daemon.json来使用加速器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /etc/docker</span><br><span class="line">sudo tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://b9urkp9v.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-卸载"><a href="#5-卸载" class="headerlink" title="5. 卸载"></a>5. 卸载</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop docker </span><br><span class="line">yum -y remove docker-ce</span><br><span class="line">rm -rf /var/lib/docker</span><br></pre></td></tr></table></figure>
+
+<h1 id="二、常用命令"><a href="#二、常用命令" class="headerlink" title="二、常用命令"></a><strong>二、常用命令</strong></h1><h3 id="1-帮助命令"><a href="#1-帮助命令" class="headerlink" title="1.  帮助命令"></a>1.  <strong>帮助命令</strong></h3><p><code>docker version </code></p>
+<p><code>docker info </code></p>
+<p><code>docker --help</code></p>
+<h3 id="2-镜像命令"><a href="#2-镜像命令" class="headerlink" title="2. 镜像命令"></a>2. 镜像命令</h3><ul>
+<li><strong>列出本地主机上的镜像</strong></li>
+</ul>
+<p><code>docker images</code></p>
+<p>OPTIONS说明：</p>
+<p>-a :列出本地所有的镜像（含中间映像层）</p>
+<p>-q :只显示镜像ID。</p>
+<p>–digests :显示镜像的摘要信息</p>
+<p>–no-trunc :显示完整的镜像信息</p>
+<ul>
+<li><strong>查找网上镜像：网站</strong><a target="_blank" rel="noopener" href="https://hub.docker.com/"><strong>https://hub.docker.com</strong></a></li>
+</ul>
+<p>docker search 某个XXX镜像名字</p>
+<p>OPTIONS说明：</p>
+<p>–no-trunc : 显示完整的镜像描述</p>
+<p>-s : 列出收藏数不小于指定值的镜像</p>
+<p>–automated : 只列出 automated build类型的镜像</p>
+<ul>
+<li><strong>下载镜像</strong></li>
+</ul>
+<p>docker pull 镜像名字[:TAG]</p>
+<ul>
+<li><strong>删除镜像</strong></li>
+</ul>
+<p>删除单个：docker rmi  -f 镜像ID</p>
+<p>删除多个：docker rmi -f 镜像名1:TAG 镜像名2:TAG</p>
+<p>删除全部：docker rmi -f $(docker images -qa)</p>
+<h3 id="3-容器命令"><a href="#3-容器命令" class="headerlink" title="3. 容器命令"></a>3. 容器命令</h3><p>有镜像才能创建容器，这是根本前提</p>
+<ul>
+<li><strong>新建并启动容器</strong></li>
+</ul>
+<p><code>docker run [OPTIONS] IMAGE [COMMAND] [ARG...]</code></p>
+<p>OPTIONS说明（常用）：有些是一个减号，有些是两个减号 </p>
+<p>–name&#x3D;”容器新名字”: 为容器指定一个名称；</p>
+<p>-d: 后台运行容器，并返回容器ID，也即启动守护式容器；</p>
+<p>-i：以交互模式运行容器，通常与 -t 同时使用；</p>
+<p>-t：为容器重新分配一个伪输入终端，通常与 -i 同时使用；</p>
+<p>-P: 随机端口映射；</p>
+<p>-p: 指定端口映射，有以下四种格式</p>
+<p>   ip:hostPort:containerPort</p>
+<p>   ip::containerPort</p>
+<p>   hostPort:containerPort</p>
+<p>   containerPort</p>
+<ul>
+<li><strong>列出当前所有正在运行的容器</strong></li>
+</ul>
+<p><code>docker ps [OPTIONS]</code></p>
+<p>OPTIONS说明（常用）： </p>
+<p>-a :列出当前所有正在运行的容器+历史上运行过的</p>
+<p>-l :显示最近创建的容器。</p>
+<p>-n：显示最近n个创建的容器。</p>
+<p>-q :静默模式，只显示容器编号。</p>
+<p>–no-trunc :不截断输出。</p>
+<ul>
+<li><strong>退出容器</strong></li>
+</ul>
+<p>容器停止退出：exit</p>
+<p>容器不停止退出：ctrl+P+Q</p>
+<ul>
+<li><strong>启动容器</strong></li>
+</ul>
+<p>docker start 容器ID或者容器名</p>
+<ul>
+<li><strong>重启容器</strong></li>
+</ul>
+<p>docker restart 容器ID或者容器名</p>
+<ul>
+<li><strong>停止容器</strong></li>
+</ul>
+<p>docker stop 容器ID或者容器名</p>
+<ul>
+<li><strong>强制停止容器</strong></li>
+</ul>
+<p>docker kill 容器ID或者容器名</p>
+<ul>
+<li><strong>删除已停止的容器</strong></li>
+</ul>
+<p>docker rm 容器ID</p>
+<p>一次性删除多个容器：</p>
+<p><code>docker rm -f $(docker ps -a -q) </code></p>
+<p><code>docker ps -a -q | xargs docker rm</code></p>
+<ul>
+<li><strong>启动守护式容器</strong></li>
+</ul>
+<p>docker run -d 容器名</p>
+<p>注意：Docker容器后台运行，就必须有一个前台进程否则会自动退出。可运行一直挂起的命令（比如运行top，tail</p>
+<ul>
+<li><strong>查看容器日志</strong></li>
+</ul>
+<p>docker logs -f -t –tail 容器ID</p>
+<p>   -t 是加入时间戳</p>
+<p>   -f 跟随最新的日志打印</p>
+<p>   –tail 数字 显示最后多少条</p>
+<ul>
+<li><strong>查看容器内运行的进程</strong></li>
+</ul>
+<p>docker top 容器ID</p>
+<ul>
+<li><strong>查看容器内部细节</strong></li>
+</ul>
+<p>docker inspect 容器ID</p>
+<ul>
+<li><strong>进入正在运行的容器并以命令行交互</strong></li>
+</ul>
+<p>docker exec -it 容器ID bashShell</p>
+<p>重新进入docker attach 容器ID</p>
+<p>上述两个区别：</p>
+<p>attach 直接进入容器启动命令的终端，不会启动新的进程</p>
+<p>exec 是在容器中打开新的终端，并且可以启动新的进程</p>
+<ul>
+<li><strong>从容器内拷贝文件到主机上</strong></li>
+</ul>
+<p>docker cp  容器ID:容器内路径 目的主机路径</p>
+<h1 id="三、Docker容器数据卷"><a href="#三、Docker容器数据卷" class="headerlink" title="三、Docker容器数据卷"></a><strong>三、Docker容器数据卷</strong></h1><h3 id="1-作用"><a href="#1-作用" class="headerlink" title="1. 作用"></a>1. 作用</h3><ul>
+<li>容器的持久化</li>
+<li>容器间继承+共享数据</li>
+</ul>
+<h3 id="2-直接命令添加"><a href="#2-直接命令添加" class="headerlink" title="2. 直接命令添加"></a>2. 直接命令添加</h3><p>docker run -it -v &#x2F;宿主机绝对路径目录:&#x2F;容器内目录 镜像名</p>
+<h3 id="3-DockerFile添加"><a href="#3-DockerFile添加" class="headerlink" title="3. DockerFile添加"></a>3. DockerFile添加</h3><p>以centos镜像为例，可在Dockerfile中使用VOLUME指令来给镜像添加一个或多个数据卷</p>
+<ul>
+<li>File构建：编写文件名为dockerfile2</li>
+</ul>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># volume test</span></span><br><span class="line"><span class="keyword">FROM</span> centos</span><br><span class="line"><span class="keyword">VOLUME</span><span class="language-bash"> [<span class="string">&quot;/dataVolumeContainer1&quot;</span>,<span class="string">&quot;/dataVolumeContainer2&quot;</span>]</span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> <span class="built_in">echo</span> <span class="string">&quot;finished,--------success1&quot;</span></span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> /bin/bash</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>build后生成镜像</li>
+</ul>
+<p>docker build -f DockerFile文件 -t 新镜像名 新镜像存放路径</p>
+<ul>
+<li>run容器</li>
+</ul>
+<p>docker run -it 新镜像名</p>
+<ul>
+<li>宿主机对应默认地址</li>
+</ul>
+<p>利用 【docker inspect 容器名&#x2F;容器ID】 查看宿主机对应默认地址</p>
+<ul>
+<li>备注</li>
+</ul>
+<p>Docker挂载主机目录Docker访问出现cannot open directory .: Permission denied</p>
+<p>解决办法：在挂载目录后多加一个–privileged&#x3D;true参数即可</p>
+<h1 id="四、DockerFile"><a href="#四、DockerFile" class="headerlink" title="四、DockerFile"></a><strong>四、DockerFile</strong></h1><p>Dockerfile是用来构建Docker镜像的构建文件，是由一系列命令和参数构成的脚本。</p>
+<h3 id="1-三步骤"><a href="#1-三步骤" class="headerlink" title="1. 三步骤"></a>1. 三步骤</h3><ul>
+<li>编写Dockerfile文件</li>
+<li>docker build</li>
+<li>docker run</li>
+</ul>
+<h3 id="2-构建知识"><a href="#2-构建知识" class="headerlink" title="2. 构建知识"></a>2. 构建知识</h3><ul>
+<li>每条保留字指令都必须为大写字母且后面要跟随至少一个参数</li>
+<li>指令按照从上到下，顺序执行</li>
+<li>每条指令都会创建一个新的镜像层，并对镜像进行提交</li>
+</ul>
+<h3 id="3-体系结构"><a href="#3-体系结构" class="headerlink" title="3. 体系结构"></a>3. 体系结构</h3><ul>
+<li>FROM</li>
+</ul>
+<p>基础镜像，当前新镜像是基于哪个镜像的</p>
+<ul>
+<li>MAINTAINER</li>
+</ul>
+<p>镜像维护者的姓名和邮箱地址</p>
+<ul>
+<li>RUN</li>
+</ul>
+<p>容器构建时需要运行的命令</p>
+<ul>
+<li>EXPOSE</li>
+</ul>
+<p>当前容器对外暴露出的端口</p>
+<ul>
+<li>WORKDIR</li>
+</ul>
+<p>指定在创建容器后，终端默认登陆的进来工作目录，一个落脚点</p>
+<ul>
+<li>ENV</li>
+</ul>
+<p>用来在构建镜像过程中设置环境变量</p>
+<p>例如：</p>
+<p>ENV MY_PATH &#x2F;usr&#x2F;mytest</p>
+<p>这个环境变量可以在后续的任何RUN指令中使用，这就如同在命令前面指定了环境变量前缀一样；也可以在其它指令中直接使用这些环境变量， 比如：WORKDIR $MY_PATH</p>
+<ul>
+<li>ADD</li>
+</ul>
+<p>将宿主机目录下的文件拷贝进镜像且ADD命令会自动处理URL和解压tar压缩包</p>
+<ul>
+<li>COPY</li>
+</ul>
+<p>类似ADD，拷贝文件和目录到镜像中。</p>
+<p>将从构建上下文目录中 &lt;源路径&gt; 的文件&#x2F;目录复制到新的一层的镜像内的 &lt;目标路径&gt; 位置</p>
+<p>COPY src dest</p>
+<p>COPY [“src”, “dest”]</p>
+<ul>
+<li>VOLUME</li>
+</ul>
+<p>容器数据卷，用于数据保存和持久化工作</p>
+<ul>
+<li>CMD</li>
+</ul>
+<p>指定一个容器启动时要运行的命令。</p>
+<p>Dockerfile 中可以有多个 CMD 指令，但只有最后一个生效，CMD 会被 docker run 之后的参数替换。</p>
+<ul>
+<li>ENTRYPOINT</li>
+</ul>
+<p>指定一个容器启动时要运行的命令。</p>
+<p>ENTRYPOINT 的目的和 CMD 一样，都是在指定容器启动程序及参数。</p>
+<ul>
+<li>ONBUILD</li>
+</ul>
+<p>当构建一个被继承的Dockerfile时运行命令，父镜像在被子继承后父镜像的onbuild被触发</p>
+<h1 id="五、Docker常用安装"><a href="#五、Docker常用安装" class="headerlink" title="五、Docker常用安装"></a><strong>五、Docker常用安装</strong></h1><h3 id="1-Tomcat"><a href="#1-Tomcat" class="headerlink" title="1. Tomcat"></a>1. Tomcat</h3><p><strong>1）拉取镜像</strong></p>
+<p><code>docker pull tomcat</code></p>
+<p><strong>2）运行</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -p 8080:8080 --name tomcat \</span><br><span class="line">-v /data/tomcat/log:/usr/local/tomcat/logs \</span><br><span class="line">-v /data/tomcat/conf:/usr/local/tomcat/conf \</span><br><span class="line">-v /data/tomcat/webapp:/usr/local/tomcat/webapps \</span><br><span class="line">tomcat /bin/bash</span><br></pre></td></tr></table></figure>
+
+<p><strong>3）验证</strong></p>
+<p>浏览器输入<a target="_blank" rel="noopener" href="http://47.96.43.200:8080/">http://47.96.43.200:8080/</a></p>
+<h3 id="2-Mysql"><a href="#2-Mysql" class="headerlink" title="2. Mysql"></a>2. <strong>Mysql</strong></h3><p><strong>1）拉取镜像</strong></p>
+<p><code>docker pull mysql</code></p>
+<p><strong>2）run</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd -p 3306:3306 --name mysql </span><br><span class="line">-v /data/mysql/logs:/var/log/mysql </span><br><span class="line">-v /data/mysql/data:/var/lib/mysql </span><br><span class="line">-v /data/mysql/conf:/etc/mysql/conf.d </span><br><span class="line">-e MYSQL_ROOT_PASSWORD=123456 </span><br><span class="line">mysql</span><br></pre></td></tr></table></figure>
+
+<p><strong>3）开放端口</strong></p>
+<p>由于是在阿里云服务器上部署的，所以要开放mysql端口3306</p>
+<p><strong>4）允许远程访问</strong></p>
+<p><code>docker exec -it mysql /bin/bash</code></p>
+<p>进入容器后</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line">GRANT ALL ON *.* TO &#x27;root&#x27;@&#x27;%&#x27;#给与远程用户所有表所有权限</span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;123456&#x27; PASSWORD EXPIRE NEVER;#更改加密规则</span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;123456&#x27;;#开启远程访问</span><br><span class="line">flush privileges;#刷新权限</span><br></pre></td></tr></table></figure>
+
+<p><strong>5）本地SQLyog链接验证</strong></p>
+<p><a target="_blank" rel="noopener" href="https://postimg.cc/yk4YpsVj"><img src="https://i.postimg.cc/hPhzjt6k/screenshot-22.png" alt="screenshot-22.png"></a></p>
+<h1 id="六、本地镜像发布到阿里云"><a href="#六、本地镜像发布到阿里云" class="headerlink" title="六、本地镜像发布到阿里云"></a><strong>六、本地镜像发布到阿里云</strong></h1><p><a target="_blank" rel="noopener" href="https://cr.console.aliyun.com/cn-hangzhou/instance/repositories">https://cr.console.aliyun.com/cn-hangzhou/instance/repositories</a></p>
+<p>登录阿里云后执行如下步骤：</p>
+<h3 id="1-创建命名空间"><a href="#1-创建命名空间" class="headerlink" title="1. 创建命名空间"></a>1. 创建命名空间</h3><h3 id="2-创建镜像仓库"><a href="#2-创建镜像仓库" class="headerlink" title="2. 创建镜像仓库"></a>2. 创建镜像仓库</h3><h3 id="3-根据操作指南发布镜像"><a href="#3-根据操作指南发布镜像" class="headerlink" title="3. 根据操作指南发布镜像"></a>3. 根据操作指南发布镜像</h3><ul>
+<li><strong>登录阿里云Docker Registry</strong></li>
+</ul>
+<p><code>docker login --username=rongmomo registry.cn-hangzhou.aliyuncs.com</code></p>
+<p>用于登录的用户名为阿里云账号全名，密码为开通服务时设置的密码。</p>
+<ul>
+<li><strong>从Registry中拉取镜像</strong></li>
+</ul>
+<p><code>docker pull registry.cn-hangzhou.aliyuncs.com/rongmomo/tomcat:[镜像版本号]</code></p>
+<ul>
+<li><strong>将镜像推送到Registry</strong></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker login --username=rongmomo registry.cn-hangzhou.aliyuncs.com</span><br><span class="line">docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com/rongmomo/tomcat:[镜像版本号]</span><br><span class="line">docker push registry.cn-hangzhou.aliyuncs.com/rongmomo/tomcat:[镜像版本号]</span><br></pre></td></tr></table></figure>
+
+<p>参考：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ls411n7mx?vd_source=067f2bdd483f7ed8a6b96da53fb1be4b">B站视频</a></p>
 
                 
             </div>
@@ -484,7 +732,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://tanlico.github.io/2023/06/25/%E7%BB%99%E5%8F%8B%E5%A5%B3%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85Ubuntu/">https://tanlico.github.io/2023/06/25/%E7%BB%99%E5%8F%8B%E5%A5%B3%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85Ubuntu/</a>
+                    <a href="https://tanlico.github.io/2023/06/18/Docker%E5%AD%A6%E4%B9%A0/">https://tanlico.github.io/2023/06/18/Docker%E5%AD%A6%E4%B9%A0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -522,12 +770,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                                    <span class="chip bg-color">操作系统</span>
+                                <a href="/tags/%E5%AE%B9%E5%99%A8/">
+                                    <span class="chip bg-color">容器</span>
                                 </a>
                             
-                                <a href="/tags/Ubuntu/">
-                                    <span class="chip bg-color">Ubuntu</span>
+                                <a href="/tags/Docker/">
+                                    <span class="chip bg-color">Docker</span>
                                 </a>
                             
                         </div>
@@ -610,13 +858,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/06/27/Nginx%E5%AD%A6%E4%B9%A0%E4%B9%8B%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8Docker%E9%83%A8%E7%BD%B2/">
+                <a href="/2023/06/25/%E7%BB%99%E5%8F%8B%E5%A5%B3%E7%94%B5%E8%84%91%E9%87%8D%E8%A3%85Ubuntu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Nginx学习之云服务器Docker部署">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="给友女电脑重装Ubuntu">
                         
-                        <span class="card-title">Nginx学习之云服务器Docker部署</span>
+                        <span class="card-title">给友女电脑重装Ubuntu</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -627,7 +875,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-06-27
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-06-25
                         </span>
                         <span class="publish-author">
                             
@@ -644,16 +892,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Docker/">
-                        <span class="chip bg-color">Docker</span>
+                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">操作系统</span>
                     </a>
                     
-                    <a href="/tags/Nginx/">
-                        <span class="chip bg-color">Nginx</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">
-                        <span class="chip bg-color">阿里云</span>
+                    <a href="/tags/Ubuntu/">
+                        <span class="chip bg-color">Ubuntu</span>
                     </a>
                     
                 </div>
@@ -667,13 +911,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/06/18/Docker%E5%AD%A6%E4%B9%A0/">
+                <a href="/2023/06/02/%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E4%B9%8B%E5%AE%89%E5%85%A8%E7%BB%84%E8%A7%84%E5%88%99/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Docker学习">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="阿里云服务器配置之安全组规则">
                         
-                        <span class="card-title">Docker学习</span>
+                        <span class="card-title">阿里云服务器配置之安全组规则</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -684,7 +928,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-02
                             </span>
                         <span class="publish-author">
                             
@@ -701,12 +945,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AE%B9%E5%99%A8/">
-                        <span class="chip bg-color">容器</span>
+                    <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91/">
+                        <span class="chip bg-color">阿里云</span>
                     </a>
                     
-                    <a href="/tags/Docker/">
-                        <span class="chip bg-color">Docker</span>
+                    <a href="/tags/%E5%AE%89%E5%85%A8%E7%BB%84/">
+                        <span class="chip bg-color">安全组</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AB%AF%E5%8F%A3/">
+                        <span class="chip bg-color">端口</span>
                     </a>
                     
                 </div>
