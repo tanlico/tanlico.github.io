@@ -313,7 +313,7 @@
 <p>如果不知道nginx安装路径，可以通过执行ps命令找到nginx程序的PID，然后kill其PID</p>
 <p><code>ps aux | grep nginx</code></p>
 <h3 id="2-查找根下所有名字包含nginx的文件"><a href="#2-查找根下所有名字包含nginx的文件" class="headerlink" title="2. 查找根下所有名字包含nginx的文件"></a>2. 查找根下所有名字包含nginx的文件</h3><p><code>find / -name nginx*</code></p>
-<p><a target="_blank" rel="noopener" href="https://postimg.cc/Mvy4yqMB"><img src="https://i.postimg.cc/rFbk2pqf/screenshot-15.png" alt="screenshot-15.png"></a></p>
+<p><img src="/2023/06/27/Nginx%E5%AD%A6%E4%B9%A0%E4%B9%8B%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8Docker%E9%83%A8%E7%BD%B2/screenshot-15.png"></p>
 <h3 id="3-执行命令-rm-rf-删除nignx安装的相关文件"><a href="#3-执行命令-rm-rf-删除nignx安装的相关文件" class="headerlink" title="3. 执行命令 rm -rf *删除nignx安装的相关文件"></a>3. <strong>执行命令 rm -rf *删除nignx安装的相关文件</strong></h3><p><code>rm -rf /etc/nginx /usr/lib64/nginx /usr/local/nginx /usr/local/nginx/sbin/nginx /usr/share/nginx</code></p>
 <h3 id="4-其他设置"><a href="#4-其他设置" class="headerlink" title="4. 其他设置"></a>4. <strong>其他设置</strong></h3><p>如果设置了Nginx开机自启动的话，可能还需要下面两步</p>
 <p><code>chkconfig nginx off</code></p>
@@ -347,7 +347,7 @@
 <h3 id="4-通过挂载创建正式容器"><a href="#4-通过挂载创建正式容器" class="headerlink" title="4. 通过挂载创建正式容器"></a>4. <strong>通过挂载创建正式容器</strong></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 80:80 \</span><br><span class="line">-v /data/nginx/conf/nginx.conf:/etc/nginx/nginx.conf \</span><br><span class="line">-v /data/nginx/html:/usr/share/nginx/html \</span><br><span class="line">-v /data/nginx/log:/var/log/nginx \</span><br><span class="line">--name nginx nginx</span><br></pre></td></tr></table></figure>
 
 <h3 id="5-验证"><a href="#5-验证" class="headerlink" title="5. 验证"></a>5. 验证</h3><p>在浏览器地址栏输入<a target="_blank" rel="noopener" href="http://47.96.43.200/">服务器IP:端口号</a></p>
-<p><a target="_blank" rel="noopener" href="https://postimg.cc/QHWLfCSY"><img src="https://i.postimg.cc/ZKwTKyNm/screenshot-16.png" alt="screenshot-16.png"></a></p>
+<p><img src="/2023/06/27/Nginx%E5%AD%A6%E4%B9%A0%E4%B9%8B%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8Docker%E9%83%A8%E7%BD%B2/screenshot-16.png"></p>
 <p>后期发布站点只需要修改&#x2F;data&#x2F;nginx&#x2F;conf中的配置文件，同时将需要发布的站点文件上传到&#x2F;data&#x2F;nginx&#x2F;html即可。</p>
 
                 

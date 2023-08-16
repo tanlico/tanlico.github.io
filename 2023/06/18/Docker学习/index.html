@@ -578,7 +578,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line">GRANT ALL ON *.* TO &#x27;root&#x27;@&#x27;%&#x27;#给与远程用户所有表所有权限</span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;123456&#x27; PASSWORD EXPIRE NEVER;#更改加密规则</span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;123456&#x27;;#开启远程访问</span><br><span class="line">flush privileges;#刷新权限</span><br></pre></td></tr></table></figure>
 
 <p><strong>5）本地SQLyog链接验证</strong></p>
-<p><a target="_blank" rel="noopener" href="https://postimg.cc/yk4YpsVj"><img src="https://i.postimg.cc/hPhzjt6k/screenshot-22.png" alt="screenshot-22.png"></a></p>
+<p><img src="/2023/06/18/Docker%E5%AD%A6%E4%B9%A0/screenshot-22.png" alt="screenshot-22.png"></p>
 <h1 id="六、-本地镜像发布到阿里云"><a href="#六、-本地镜像发布到阿里云" class="headerlink" title="六、 本地镜像发布到阿里云"></a>六、 本地镜像发布到阿里云</h1><p><a target="_blank" rel="noopener" href="https://cr.console.aliyun.com/cn-hangzhou/instance/repositories">https://cr.console.aliyun.com/cn-hangzhou/instance/repositories</a></p>
 <p>登录阿里云后执行如下步骤：</p>
 <h3 id="1-创建命名空间"><a href="#1-创建命名空间" class="headerlink" title="1. 创建命名空间"></a>1. 创建命名空间</h3><h3 id="2-创建镜像仓库"><a href="#2-创建镜像仓库" class="headerlink" title="2. 创建镜像仓库"></a>2. 创建镜像仓库</h3><h3 id="3-根据操作指南发布镜像"><a href="#3-根据操作指南发布镜像" class="headerlink" title="3. 根据操作指南发布镜像"></a>3. 根据操作指南发布镜像</h3><ul>
