@@ -6,15 +6,9 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Linux基础学习, 付与晚山青">
     <meta name="description" content="Linux基础学习第一章 认识Linux1. 概述
-2. CentOS安装3. Linux目录结构Linux中一切皆文件！
-目录结构如下：
+2. CentOS安装1）CentOS 7 镜像下载官网下载链接：CentOS Mirrors List
 
-
-
-
-
-
-第二章 VI&amp;#x2F;VIM 编辑器第三章 网络配置第四章 系统管理第五章 常用基本命">
+阿里云站点：centos-7-isos-x86_64安装包下载_开源镜像站-阿里">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -383,7 +377,67 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="Linux基础学习"><a href="#Linux基础学习" class="headerlink" title="Linux基础学习"></a>Linux基础学习</h1><h2 id="第一章-认识Linux"><a href="#第一章-认识Linux" class="headerlink" title="第一章 认识Linux"></a>第一章 认识Linux</h2><h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h3><p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230830215359.png"></p>
-<h3 id="2-CentOS安装"><a href="#2-CentOS安装" class="headerlink" title="2. CentOS安装"></a>2. CentOS安装</h3><h3 id="3-Linux目录结构"><a href="#3-Linux目录结构" class="headerlink" title="3. Linux目录结构"></a>3. Linux目录结构</h3><p>Linux中一切皆文件！</p>
+<h3 id="2-CentOS安装"><a href="#2-CentOS安装" class="headerlink" title="2. CentOS安装"></a>2. CentOS安装</h3><h5 id="1）CentOS-7-镜像下载"><a href="#1）CentOS-7-镜像下载" class="headerlink" title="1）CentOS 7 镜像下载"></a>1）CentOS 7 镜像下载</h5><p>官网下载链接：<a target="_blank" rel="noopener" href="http://isoredirect.centos.org/centos/7/isos/x86_64/">CentOS Mirrors List</a></p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230908203657.png"></p>
+<p>阿里云站点：<a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/centos/7/isos/x86_64/">centos-7-isos-x86_64安装包下载_开源镜像站-阿里云 (aliyun.com)</a></p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230908203909.png"></p>
+<h5 id="2）CentOS-7-安装"><a href="#2）CentOS-7-安装" class="headerlink" title="2）CentOS 7 安装"></a>2）CentOS 7 安装</h5><p>打开虚拟机：</p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230908204510.png"></p>
+<p>点击创建新的虚拟机：</p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230908204626.png"></p>
+<p>点击下一步：</p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230908204727.png"></p>
+<p>取个名，选择存放位置：</p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230908204841.png"></p>
+<p>点击下一步</p>
+<p>如无特殊需要，这里默认就好。可根据自己业务调整磁盘大小。后期也可以安装。所以这里可以先默认</p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230908205017.png"></p>
+<p>点击下一步</p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230908205203.png"></p>
+<p>点击自定义硬件</p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230908205250.png"></p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230908205356.png"></p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230908205446.png"></p>
+<p>这里附虚拟机三种网络连接模式的区别：</p>
+<ul>
+<li>NAT模式依靠的是物理终极的VMware8网卡上网，虚拟机可以互ping通，前提是物理主机的VMnet8网卡的网关要与虚拟机一样！如果不在同一个网关，会出现虚拟机能ping通物理主机，但是物理主机无法ping通虚拟机的情况。1.NAT方式使虚拟机接入外网方便，不需要进行其他的配置，只需要物理主机可以上网即可2.如果想安装个虚拟机，又不想配置网络，就推荐使NAT方式上网。3.NAT模式下的虚拟系统的TCP&#x2F;IP配置信息就是由VMnet8（NAT）虚拟网络的DHCP服务器提供的，无法      进行手工的修改，因此虚拟系统也就无法和本局域网中的其他真实主机进行通讯。（不能用NAT配置集群的原因）</li>
+<li>Bridged（桥接）基于以上的拓扑测试，桥接方式虚拟出来的系统就像是局域网内单独存在的独立“物理机”一样，他可以访问同一局域网内的任何一台机器，也可以单独通过局域网网关或者路由器访问外网。不过需要在每台机器上都要单独配置IP，网关，网段，DNS等。由于这个虚拟系统的局域网中的一个单独的主机系统，那么就可以手工配置他的TCP&#x2F;IP配置信息，一实现通过局域网的网关或者路由器访问互联网。利用同样的网关网段配置，Bridged可以用来配置集群。</li>
+<li>Host-Only（主机）虚拟机的TCP&#x2F;IP配置信息（如IP地址，网关地址，DNS服务器等）都是由VMnet1（host-only）虚拟网络的DHCP服务器来动态分配的。这种模式下，所有局域网内的所有虚拟机互通，但虚拟机无法访问外网，与外网完全隔离。此种模式同样可以配置集群，但是集群无法访问外网，比较适合公司内网。</li>
+</ul>
+<p>点击关闭</p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230908205831.png"></p>
+<p>点击完成，然后启动安装流程：</p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230908210110.png"></p>
+<p>界面说明：<br>Install CentOS Linux 7 	#安装CentOS 7</p>
+<p>Test this media &amp; install CentOS Linux 7 	#测试安装文件并安装CentOS7</p>
+<p>Troubleshooting	 #修复故障</p>
+<p>这里选择Install CentOS Linux7，安装CentOS 7，回车，进入下面的界面</p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230908210249.png"></p>
+<p>回车，进入下面的界面</p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230908210328.png"></p>
+<p>等待到Checking：100%，进入下面的界面</p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230908210403.png"></p>
+<p>语言选择界面，正式生产服务器建议安装英文版本。Continue继续</p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230908210506.png"></p>
+<p>选择DATE&amp;TIME，设置日期和时间，然后选择Done</p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230908210551.png"></p>
+<p>再次选择INSTALLATION DESTINATION，进入磁盘分区界面（我选择自动配置分区， 默认即可），然后选择Done</p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230908210626.png"></p>
+<p>界面说明：<br>Automatically configure partitioning 	#自动配置分区<br>I will configure partitioning 	#自己配置分区<br>I would like to make additional space available 	#提供额外的空间</p>
+<p>其他设置默认即可</p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230908210836.png"></p>
+<p>选择Begin Installation开始安装，进入下面的界面</p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230907151412.png"></p>
+<p>选择ROOT PASSWORD，设置root密码，然后选择Done</p>
+<p>选择USER CREATION，创建用户并设置密码，然后选择Done</p>
+<p>安装完成之后，会进入下面的界面.（可能需要10分钟作用），选择Reboot</p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230908211117.png"></p>
+<p>重启之后，进入如下界面</p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230908211336.png"></p>
+<p>输入之前设置的用户名和密码进入下面的界面</p>
+<p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230908211412.png"></p>
+<p>至此CentOS系统安装完成</p>
+<h5 id="3）设置IP地址、网关和DNS等"><a href="#3）设置IP地址、网关和DNS等" class="headerlink" title="3）设置IP地址、网关和DNS等"></a>3）设置IP地址、网关和DNS等</h5><h3 id="3-Linux目录结构"><a href="#3-Linux目录结构" class="headerlink" title="3. Linux目录结构"></a>3. Linux目录结构</h3><p>Linux中一切皆文件！</p>
 <p>目录结构如下：</p>
 <p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230830220041.png"></p>
 <p><img src="/2023/04/17/Linux%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/20230830220102.png"></p>
